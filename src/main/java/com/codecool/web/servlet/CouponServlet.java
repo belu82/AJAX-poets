@@ -20,9 +20,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.SQLException;
-import java.util.Arrays;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @WebServlet("/protected/coupon")
 public final class CouponServlet extends AbstractServlet {
