@@ -2,12 +2,12 @@ package com.codecool.web.model;
 
 import java.util.Objects;
 
-public final class User extends AbstractModel {
+public class Poet extends AbstractModel {
 
     private final String email;
     private final String password;
 
-    public User(int id, String email, String password) {
+    public Poet(int id, String email, String password) {
         super(id);
         this.email = email;
         this.password = password;
@@ -26,9 +26,9 @@ public final class User extends AbstractModel {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         if (!super.equals(o)) return false;
-        User user = (User) o;
-        return Objects.equals(email, user.email) &&
-            Objects.equals(password, user.password);
+        Poet poet = (Poet) o;
+        return Objects.equals(email, poet.email) &&
+            Objects.equals(password, poet.password);
     }
 
     @Override

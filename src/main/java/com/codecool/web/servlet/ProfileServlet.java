@@ -1,6 +1,6 @@
 package com.codecool.web.servlet;
 
-import com.codecool.web.model.User;
+import com.codecool.web.model.Poet;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -14,8 +14,8 @@ public final class ProfileServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        User user = (User) req.getSession().getAttribute("user");
-        req.setAttribute("user", user);
+        Poet poet = (Poet) req.getSession().getAttribute("poet");
+        req.setAttribute("poet", poet);
         req.getRequestDispatcher("profile.jsp").forward(req, resp);
     }
 }

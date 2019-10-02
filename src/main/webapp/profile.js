@@ -1,26 +1,17 @@
-function onShopsClicked() {
-    const xhr = new XMLHttpRequest();
-    xhr.addEventListener('load', onShopsResponse);
-    xhr.addEventListener('error', onNetworkError);
-    xhr.open('GET', 'protected/shops');
-    xhr.send();
-}
 
-function onCouponsClicked() {
-    const xhr = new XMLHttpRequest();
-    xhr.addEventListener('load', onCouponsResponse);
-    xhr.addEventListener('error', onNetworkError);
-    xhr.open('GET', 'protected/coupons');
-    xhr.send();
-}
-
-function onProfileLoad(user) {
+function onProfileLoad(poet) {
     clearMessages();
-    showContents(['profile-content', 'logout-content']);
+    showContents(['profile-content', 'logout-content', 'back-to-profile-content', 'poems-content']);
 
-    const userEmailSpandEl = document.getElementById('user-email');
-    const userPasswordSpanEl = document.getElementById('user-password');
+    const userEmailSpandEl = document.getElementById('poet-email');
 
-    userEmailSpandEl.textContent = user.email;
-    userPasswordSpanEl.textContent = user.password;
+    userEmailSpandEl.textContent = poet.email;
+}
+
+function onPoemsClicked(){
+    const xhr = new XMLHttpRequest();
+    xhr.addEventListener('load', onPoemsResponse);
+    xhr.addEventListener('error', onNetworkError);
+    xhr.open('GET', 'protected/poems');
+    xhr.send();
 }

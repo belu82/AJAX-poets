@@ -6,12 +6,10 @@ const INTERNAL_SERVER_ERROR = 500;
 
 let loginContentDivEl;
 let profileContentDivEl;
-let couponContentDivEl;
-let couponsContentDivEl;
-let shopContentDivEl;
-let shopsContentDivEl;
 let backToProfileContentDivEl;
 let logoutContentDivEl;
+let poemsContentDivEl;
+let poemContentDivEl
 
 function newInfo(targetEl, message) {
     newMessage(targetEl, 'info', message);
@@ -82,30 +80,30 @@ function onOtherResponse(targetEl, xhr) {
 }
 
 function hasAuthorization() {
-    return localStorage.getItem('user') !== null;
+    return localStorage.getItem('poet') !== null;
 }
 
-function setAuthorization(user) {
-    return localStorage.setItem('user', JSON.stringify(user));
+function setAuthorization(poet) {
+    return localStorage.setItem('poet', JSON.stringify(poet));
 }
 
 function getAuthorization() {
-    return JSON.parse(localStorage.getItem('user'));
+    return JSON.parse(localStorage.getItem('poet'));
 }
 
 function setUnauthorized() {
-    return localStorage.removeItem('user');
+    return localStorage.removeItem('poet');
 }
 
 function onLoad() {
     loginContentDivEl = document.getElementById('login-content');
     profileContentDivEl = document.getElementById('profile-content');
-    couponContentDivEl = document.getElementById('coupon-content');
-    couponsContentDivEl = document.getElementById('coupons-content');
-    shopContentDivEl = document.getElementById('shop-content');
-    shopsContentDivEl = document.getElementById('shops-content');
+
     backToProfileContentDivEl = document.getElementById('back-to-profile-content');
     logoutContentDivEl = document.getElementById('logout-content');
+    poemContentDivEl = document.getElementById('poem-content');
+
+    poemsContentDivEl = document.getElementById('poems-content');
 
     const loginButtonEl = document.getElementById('login-button');
     loginButtonEl.addEventListener('click', onLoginButtonClicked);
